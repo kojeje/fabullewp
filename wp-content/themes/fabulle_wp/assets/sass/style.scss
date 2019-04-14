@@ -1,0 +1,274 @@
+@import "partials/var";
+@import "partials/states";
+@import "partials/fonts";
+
+html
+{
+  scroll-behavior: smooth;
+}
+body
+{
+  background: $black !important;
+  color: $white !important;
+}
+h1
+{font-size: 40px;}
+img
+{
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+a
+{
+  color: $white !important;
+}
+iframe
+{
+  display: block;
+  width: 100%;
+  margin: auto;
+
+}
+.header {
+  position: sticky;
+  top: 0;
+  background: $black;
+  z-index: 1000;
+  height: 20vh;
+}
+.show-content,
+.show-content2,
+#title-spe {
+  padding-top: 20vh;
+}
+
+.nav
+{
+  padding-top: 50px;}
+.logo
+{
+  margin-top: 10px !important;
+  margin-bottom: 20px;
+}
+.logo_fabulle
+{
+  max-width: 30%;
+  padding: 10px;
+  margin: auto;
+}
+.logo-fabulle2
+{
+  max-width: 60%;
+  margin: auto;
+}
+
+.links
+{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  list-style-type: none;
+}
+.thumb
+{
+  margin-bottom: 30px;
+}
+
+.link
+{
+ text-decoration: none;
+}
+.boucle
+{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.the_post_medal
+{
+  width: 35%;
+  padding: 20px;
+  border-bottom: 4px solid $link;
+  border-left: 4px solid $link;
+  margin-bottom: 30px;
+}
+.f_l
+{
+  margin: auto;
+  text-align: center;
+}
+
+.banner
+{
+  margin: auto;
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 50px;
+}
+.banner img
+{
+  width: 50%;
+}
+.titre 
+{
+  text-align: center;
+}
+
+.content
+{
+  padding: 20px;
+}
+.article-content
+{
+  margin: 0;
+  width: 100%;
+}
+
+.caption
+{
+  position: absolute;
+  bottom: 30vh;
+  padding:1px;
+  padding-bottom: 30px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.4);
+
+
+}
+.button{
+  position: absolute;
+  bottom:10vh;
+  //background: #324eff;
+  ////padding: 10px;
+  font-size:100px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  left: 45%;
+  opacity:0.2;
+  transition:0.5s;
+
+}
+.button2
+{
+  font-size: 50px;
+  bottom: 10px;
+  opacity:0.5;
+  position: relative;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon
+{
+  //font-size: 100px !important;
+  width:100px;
+  height: 100px;
+  font-size:100px;
+  opacity:0.2;
+  transition:0.5s;
+}
+.article-h1
+{
+  font-size: 40px;
+  color: $link;
+}
+
+.show_teaser
+{
+  padding: 40px;
+
+}
+.dispo span
+{
+  color: red;
+  font-weight: 800;
+}
+.article-text,
+.wp-block-table
+{
+  margin-left: 1%;
+  font-size: 20px;
+  margin-top: 20px;
+
+
+}
+.wp-block-table,
+.article-text
+{
+  width: 70%;
+  margin: auto;
+}
+.article-text
+{
+  padding: 10px;
+}
+.article-text-h2
+{
+  padding: 10px;
+  font-size:30px;
+}
+.video
+{
+  padding-top: 20vh;
+}
+.video-content
+{
+  padding: 15px;
+  border: 4px solid $link;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.bref
+{
+
+  padding-top: 60vh;
+
+
+}
+
+.bref_block
+{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  border: 3px solid $link;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.bref-item
+{
+  width: 40%;
+  min-height: 50px;
+  padding: 10px;
+}
+.style
+{
+  width: 90%;
+  font-size: 20px;
+  color: $link;
+
+}
+.mentions i
+{
+  font-size: 12px;
+  color: $link;
+}
+footer
+{
+  margin-top: 30px;
+  height: 30vh;
+}
+.f-link
+{
+  line-height: 100px;
+  text-align: center;
+}
+
+

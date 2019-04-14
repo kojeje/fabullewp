@@ -1,0 +1,13 @@
+a:hover
+{
+  color:$link;
+  text-decoration: none;
+}
+
+.button:hover,
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover
+{
+  opacity: 1;
+  color: $link !important;
+}

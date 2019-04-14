@@ -1,0 +1,21 @@
+<header class="header container-fluid">
+    <div class="header_bloc row">
+        <div class="logo col-md-4">
+            <img class="logo_fabulle" src="{{ theme.link }}/assets/img/logo.png" alt="logo">
+        </div>
+        <nav class="nav col-md-8">
+            <ul class="links">
+
+
+                {% for item in menu.items %}
+                    <a href="{{ item.link }}">
+                        <li class="link">{{ item.title }}</li>
+                    </a>
+
+                {% endfor %}
+
+            </ul>
+            
+        </nav>
+    </div>
+</header>
