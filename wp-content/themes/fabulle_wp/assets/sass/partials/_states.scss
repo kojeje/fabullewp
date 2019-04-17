@@ -5,9 +5,27 @@ a:hover
 }
 
 .button:hover,
+.totop:hover,
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover
 {
   opacity: 1;
   color: $link !important;
+}
+.totop:hover
+{
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid $white;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  opacity:1;
+ }
+.totop i:hover
+{
+  color: $link;
+}
+.show:hover
+{
+  opacity:1;
 }

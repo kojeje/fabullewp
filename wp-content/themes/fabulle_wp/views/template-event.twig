@@ -1,0 +1,68 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <section class="article-content row">
+                {% for show in shows %}
+                    {% if show.category == post.category %}
+                        <div class="event">
+                            <h1 class="date">Le {{ post.get_field('field_5cb4d81344d45') }}</h1>
+                            <div class="place">
+                                <div class="h1-medal">
+                                    {{ post.get_field('field_5cb4e5ba17780') }}
+                                </div>
+                                <p class="ad">
+                                    {{ post.get_field('field_5cb4e5e417781') }}
+                                </p>
+                                <p class="ad">
+                                    {{ post.get_field('field_5cb4e60517782') }}
+                                </p>
+                                <p class="ad">
+                                    {{ post.get_field('field_5cb4e62317783') }}
+                                    <strong>
+                                        {{ post.get_field('field_5cb4e63d17784') }}
+                                    </strong>
+                                </p>
+                                <div class="show">
+                                    <a class="row" href="{{ show.link }}">
+
+                                        <h1 class="h1-medal col-12">
+                                            {{ show.title }}
+                                        </h1>
+
+                                        <div class="thumb-medal col-md-12">
+                                            <img src="{{show.thumbnail.src}}" alt="affiche" class="affiche">
+                                        </div>
+
+                                        <div class="offset-md-6"></div>
+                                        <p class="col-6">
+
+                                        </p>
+                                        <p class="col-6">
+                                            {{ show.get_field('field_5cb19e8a1f92d') }}
+                                        </p>
+
+                                        <p class="col-6">
+                                            A partir de: {{ show.get_field('field_5cb19f4acd2c1') }} ans
+                                        </p>
+                                        <div class="offset-md-3"></div>
+                                        <p class="col-6">
+                                            durée: {{ show.get_field('field_5cb19fe0cd2c3') }} environ.
+                                        </p>
+                                        <div class="offset-md-3"></div>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    {% endif %}
+                {% endfor %}
+            </section>
+        </article>
+    </div><!-- /content-wrapper -->
+{% endblock %}
+

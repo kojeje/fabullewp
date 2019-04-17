@@ -15,7 +15,7 @@
 // de données, et venir récupérer uniquement les trois
 // derniers articles
   $args_articles = [
-    'post_type' => 'post',
+    'post_type' => 'post'
 
   ];
 
