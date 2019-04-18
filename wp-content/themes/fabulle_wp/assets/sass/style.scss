@@ -1,6 +1,6 @@
 @import "partials/var";
-@import "partials/states";
 @import "partials/fonts";
+@import "partials/states";
 
 html
 {
@@ -28,6 +28,7 @@ iframe
 {
   display: block;
   width: 100%;
+  height: 300px;
   margin: auto;
 
 }
@@ -38,31 +39,21 @@ iframe
   z-index: 1000;
   height: 20vh;
 }
-.show-content,
-.show-content2,
-#title-spe {
-  padding-top: 20vh;
-}
+
 
 .nav
 {
   padding-top: 50px;}
 .logo
 {
-  margin-top: 10px !important;
+
   margin-bottom: 20px;
 }
 .logo_fabulle
 {
-  max-width: 30%;
-  padding: 10px;
-  margin: auto;
+  max-width: 50%;
 }
-.logo-fabulle2
-{
-  max-width: 60%;
-  margin: auto;
-}
+
 
 .links
 {
@@ -70,6 +61,14 @@ iframe
   justify-content: space-around;
   width: 100%;
   list-style-type: none;
+}
+
+#article-anch,
+#article-anch2,
+#article-anch3
+{
+  display: block;
+  height: 22vh;
 }
 .thumb
 {
@@ -79,6 +78,8 @@ iframe
 .thumb-medal img
 {
   padding: 10px;
+  width: 100%;
+
 
 }
 
@@ -136,9 +137,15 @@ iframe
 {
   display: flex;
   justify-content: space-around;
-  margin-top: 90px;
+  margin-top: 50px;
   flex-wrap: wrap;
 
+}
+.loop-title
+{
+  width: 50%;
+  margin-left: 50px;
+  margin-top: 20px;
 }
 .article-loop2 img
 {
@@ -185,6 +192,10 @@ iframe
   opacity:0.5;
   position: relative;
 }
+.button3
+{
+  margin-top: 25vh;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon
 {
@@ -197,8 +208,24 @@ iframe
 }
 .article-h1
 {
+  margin: auto;
   font-size: 40px;
   color: $link;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid $white;
+  border-left: 1px solid $white;
+
+}
+#imagine
+{
+  width: 60%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.show-h1
+{
+  width: 90%;
 }
 
 .show_teaser
@@ -214,16 +241,67 @@ iframe
   text-align: right;
   font-size: 12px !important;
 }
-.show-h1
+.dates
 {
   text-align: center;
+
+
 }
 
+.next-date
+{
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: $link2;
+  padding: 20px;
+  width: 42%;
+  border: 1px solid $white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: $black;
+  padding-top: 40px;
+
+}
+.next-date2
+{
+  width: 100%;
+}
+.date-mini
+{
+  font-size: 14px;
+}
+
+.date-link
+{
+  display: block;
+
+}
+
+.town-mini
+{
+  font-size: 18px;
+  font-weight: 900;
+}
+.date-line
+{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  border: 1px solid $white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
 .article-text,
 .wp-block-table
 {
   margin-left: 1%;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 20px;
 
 
@@ -243,6 +321,10 @@ iframe
   padding: 10px;
   font-size:30px;
 }
+.article-sub-h2
+{
+  font-size:15px;
+}
 .v-bloc
 {
   height: 20vh;
@@ -256,14 +338,6 @@ iframe
   border-radius: 20px;
 }
 
-.bref
-{
-
-  padding-top: 10vh;
-
-
-
-}
 
 .bref_block
 {
@@ -290,6 +364,10 @@ iframe
   color: $link;
 
 }
+.mentions
+{
+  width: 100%;
+}
 .mentions i
 {
   font-size: 12px;
@@ -313,15 +391,77 @@ footer
 }
 .show
 {
-  width: 40%;
-  border:2px solid $link;
+  max-width: 40%;
+  border:2px solid $white;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
   margin-bottom: 100px;
-  opacity:0.5;
+
+}
+.info-bloc
+{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.info
+{
+  color: $link;
+  width: 50%;
+}
+.new-show
+{
+  min-width: 41%;
+  max-width: 80%;
+  border:2px solid $white;
+}
+.old-show
+{
+  opacity:0.6;
+}
+.preview {
+  max-width: 70%;
+  font-size: 18px;
+
+
+}
+.preview-content
+{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.h1-event{
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 45px;
+
+}
+.h1-event2
+{
+  font-size: 20px;
+}
+
+.h1-event span
+{
+  text-align: center;
+  padding: 10px;
+  border-left: 1px solid $white;
+  border-bottom: 1px solid $white;
+  display: block;
+  width: 70%;
+  font-size:25px;
+  color: $link;
+
+
+
+}
+.h1-event2 span
+{
+  width: 90%;
 }
 .show2
 {
@@ -333,6 +473,33 @@ footer
   margin: 10px;
   margin-bottom: 100px;
   width: 45%;
+}
+.show3
+{
+  opacity: 1;
+}
+.event
+{
+  width: 45%;
+  padding-top: 10vh;
+  padding-left: 20px;
+}
+.ad
+{
+  font-size: 12px;
+}
+.ad strong
+{
+  font-size:14px;
+  color:$link;
+}
+.adress
+{
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.map{
+  width: 50%;
 }
 .h1-medal
 {
@@ -388,12 +555,22 @@ footer
   color: $link;
   width: 90%;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
+  text-align: center;
 
+}
+.date-line:hover
+
+{
+  background: $link;
+  color: #000000 !important;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .place
 {
 
 }
+
 

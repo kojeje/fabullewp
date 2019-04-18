@@ -1,44 +1,82 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+    <a id="article-anch anch"></a>
 
     <div class="content-wrapper article_content" xmlns="http://www.w3.org/1999/html">
 
 
         <article class="post-type-{{post.post_type}}" id="post-{{post.ID}} container-fluid">
+            <a id="article-anch anch"></a>
             <h1 class="loop-title">A l'affiche !</h1>
-            <div class="article-loop container">
+            <div class="article-loop container-fluid">
                 {% for show in shows %}
                     {% if show.get_field('dispo') %}
-                        <div class="show row">
+                        <div class="show new-show">
                             <a class="row" href="{{ show.link }}">
-
-                                <h1 class="h1-medal col-12">
-                                    {{ show.title }}
-                                </h1>
-
                                 <div class="thumb-medal col-md-4">
+
                                     <img src="{{show.thumbnail.src}}" alt="affiche" class="affiche">
+                                    <div class="info-bloc">
+                                        <p class="info ">
+                                            {{ show.get_field('field_5cb19e8a1f92d') }}
+                                        </p>
+                                        <p class="info">
+                                            durée: {{ show.get_field('field_5cb19fe0cd2c3') }} mn env.
+                                        </p>
+                                        <p class="info ">A partir de: {{ show.get_field('field_5cb19f4acd2c1') }} ans</p>
+                                    </div>
                                 </div>
-                                <p class="col-md-6">
-                                    {{ show.preview.read_more('') }}
-                                </p>
-                                <div class="offset-md-6"></div>
-                                <p class="col-md-6 dispo">
-                                    <span>A l'Affiche</span>
-                                </p>
-                                <p class="col-6">A partir de: {{ show.get_field('field_5cb19f4acd2c1') }} ans</p>
-                                <p class="col-6">
-                                    du {{ show.get_field('field_5cb1e19399290') }} au {{ show.get_field('field_5cb1e23b477ab') }}
-                                </p>
-                                <p class="col-6">
-                                    {{ show.get_field('field_5cb19e8a1f92d') }}
-                                </p>
-                                <p class="col-6">
-                                    durée: {{ show.get_field('field_5cb19fe0cd2c3') }} mn env.
-                                </p>
+                                <div class="offset-md-2"></div>
+                                <div class="bloc2 col-md-6">
+
+                                    <h1 class="h1-event">
+                                        <span>
+                                            {{ show.title }}
+                                        </span>
+                                    </h1>
+
+                                    <div class="preview">
+                                        <p class="preview-content">
+                                        {{ show.preview.read_more('').length(20) }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                
                             </a>
 
+                                <h4 class="next-date">PROCHAINES REPRÉSENTATIONS</h4>
+                                {% for event in events %}
+                                    {% if show.category == event.category %}
+                                        <div class="dates row">
+                                            <div class="offset-md-2"></div>
+                                            <a  class="date-link col-md-8" href="{{ event.link }}">
+                                                <div class="date-line">
+                                                    <p class="date-mini">{{ event.get_field('field_5cb4d81344d45') }}</p>
+                                                    <p class="cp-mini">{{ event.get_field('field_5cb4e62317783') }}</p>
+                                                    <p class="town-mini">{{ event.get_field('field_5cb4e63d17784') }}</p>
+                                                </div>
+                                            </a>
+                                            <div class="offset-md-2"></div>
+
+                                        </div>
+
+                                    {% else %}
+                                        <div class="dates row">
+                                            <div class="offset-md-2"></div>
+                                            <a  class="date-link col-md-8" href="{{ event.link }}">
+                                                <div class="date-line">
+                                                    <p>Pas d'actualité pour ce spectacle</p>
+                                                </div>
+                                            </a>
+                                            <div class="offset-md-2"></div>
+
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                            
                         </div>
 
 
@@ -57,17 +95,19 @@
 
                     {% if show.get_field('dispo')==false  %}
 
-                        <div class="show">
+                        <div class="show old-show">
                             <a class="row" href="{{ show.link }}">
-
-                                <h1 class="h1-medal col-12">
-                                    {{ show.title }}
-                                </h1>
-
-                                <div class="thumb-medal col-4">
+                                <div class="thumb-medal col-md-4">
                                     <img src="{{show.thumbnail.src}}" alt="affiche" class="affiche">
                                 </div>
-                                <p class="col-8">
+                                <h1 class="h1-event h1-event2 col-md-8">
+                                    <span>
+                                        {{ show.title }}
+                                    </span>
+                                </h1>
+
+                                <div class="offset-md-2"></div>
+                                <p class="col-md-10">
                                     {{ show.preview.read_more('') }}
                                 </p>
                             </a>

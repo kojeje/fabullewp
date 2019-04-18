@@ -1,0 +1,18 @@
+{% block content %}<form action="{{ post.link }}" class="contact-form" method="post" {{ form_enctype(form) }}>
+    {{ form_row(form.message, {
+        'label_attr': {'class': 'form__label'},
+        'attr': {'placeholder': 'Type your message here'}
+    }) }}
+
+    {{ form_row(form.name, {
+        'label_attr': {'class': 'form__label'},
+        'attr': {'placeholder': 'name'}
+    }) }}
+
+    {{ form_row(form.email, {
+        'label_attr': {'class': 'form__label'},
+        'attr': {'placeholder': 'email'}
+    }) }}
+
+    {{ form_widget(form) }}
+</form>

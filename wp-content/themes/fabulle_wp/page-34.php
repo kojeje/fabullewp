@@ -18,16 +18,22 @@
 // derniers articles
   $args_articles = [
     'post_type' => 'post',
-    'posts_per_page' => 5,
     'category_name' => 'show'
   ];
 
+  $args_articles2 = [
+    'post_type' => 'post',
+    'category_name' => 'event'
+  ];
 
 
 // récupère les articles en fonction du tableau d'argument $args_posts
 // en utilisant la méthode de Timber get_posts
 // puis on les enregistre dans l'array $context sous la clé "posts"
   $context['shows'] = Timber::get_posts($args_articles);
+  $context['events'] = Timber::get_posts($args_articles2);
+
+
 
   // appelle la vue twig "index.twig" située dans le dossier views
 // en lui passant la variable $context qui contient notamment ici les articles

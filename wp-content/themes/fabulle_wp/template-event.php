@@ -1,7 +1,7 @@
 <?php
   /**
-   * template name: show
-   * Template Post Type: post
+   * template name: event
+   * Template Post Type: post, page
    */
 
 
