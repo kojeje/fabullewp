@@ -12,23 +12,16 @@
             <div class="article-loop container-fluid">
                 {% for show in shows %}
                     {% if show.get_field('dispo') %}
-                        <div class="show new-show">
+                        <div class="show show2 show3 show-medal row">
                             <a class="row" href="{{ show.link }}">
-                                <div class="thumb-medal col-md-4">
+                                <div class="offset-md-3"></div>
+                                <div class="thumb-medal2 col-md-6">
 
-                                    <img src="{{show.thumbnail.src}}" alt="affiche" class="affiche">
-                                    <div class="info-bloc">
-                                        <p class="info ">
-                                            {{ show.get_field('field_5cb19e8a1f92d') }}
-                                        </p>
-                                        <p class="info">
-                                            durée: {{ show.get_field('field_5cb19fe0cd2c3') }} mn env.
-                                        </p>
-                                        <p class="info ">A partir de: {{ show.get_field('field_5cb19f4acd2c1') }} ans</p>
-                                    </div>
+                                    <img src="{{show.thumbnail.src}}" alt="affiche">
+
                                 </div>
-                                <div class="offset-md-2"></div>
-                                <div class="bloc2 col-md-6">
+                                <div class="offset-md-3"></div>
+                                <div class="bloc2 col-md-12">
 
                                     <h1 class="h1-event">
                                         <span>
@@ -37,50 +30,49 @@
                                     </h1>
 
                                     <div class="preview">
+                                        <p class="info ">
+                                            {{ show.get_field('field_5cb19e8a1f92d') }}
+                                        </p>
                                         <p class="preview-content">
                                         {{ show.preview.read_more('').length(20) }}
                                         </p>
                                     </div>
+                                    <p class="info">
+                                        durée: {{ show.get_field('field_5cb19fe0cd2c3') }} mn env.
+                                    </p>
+                                    <p class="info ">A partir de: {{ show.get_field('field_5cb19f4acd2c1') }} ans</p>
                                 </div>
 
                                 
                             </a>
 
-                                <h4 class="next-date">PROCHAINES REPRÉSENTATIONS</h4>
-                                {% for event in events %}
-                                    {% if show.category == event.category %}
-                                        <div class="dates row">
-                                            <div class="offset-md-2"></div>
-                                            <a  class="date-link col-md-8" href="{{ event.link }}">
-                                                <div class="date-line">
-                                                    <p class="date-mini">{{ event.get_field('field_5cb4d81344d45') }}</p>
-                                                    <p class="cp-mini">{{ event.get_field('field_5cb4e62317783') }}</p>
-                                                    <p class="town-mini">{{ event.get_field('field_5cb4e63d17784') }}</p>
-                                                </div>
-                                            </a>
-                                            <div class="offset-md-2"></div>
+                        {% for event in events %}
+                            {% if show.get_field('field_5cbc31c7f2c13') == event.get_field('field_5cbc31c7f2c13') %}
 
+                                <h4 class="next-date next-date3">PROCHAINES REPRÉSENTATIONS</h4>
+
+                                <section class="event-home-bloc container">
+
+                                    <a class="row event-home" href="{{ event.link }}">
+                                        <div class="thumb thumb2 col-md-3">
+                                            <img src="{{ show.thumbnail.src }}" alt="thumb">
                                         </div>
+                                        <p class="col-md-3">{{ event.get_field('field_5cb4d81344d45') }}</p>
+                                        <p class="col-md-3">{{ event.get_field('field_5cb4e5ba17780') }}</p>
+                                        <p class="col-md-3">{{ event.get_field('field_5cb4e62317783') }} {{ event.get_field('field_5cb4e63d17784') }}</p>
+                                    </a>
+                                </section>
 
-                                    {% else %}
-                                        <div class="dates row">
-                                            <div class="offset-md-2"></div>
-                                            <a  class="date-link col-md-8" href="{{ event.link }}">
-                                                <div class="date-line">
-                                                    <p>Pas d'actualité pour ce spectacle</p>
-                                                </div>
-                                            </a>
-                                            <div class="offset-md-2"></div>
 
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
 
                             
                         </div>
-
-
                     {% endif %}
+
+
+
 
                 {% endfor %}
 

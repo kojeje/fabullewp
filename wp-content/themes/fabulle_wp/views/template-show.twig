@@ -36,8 +36,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        <a href="#article-anch anch ">
-            <div class="button">
+        <a href="#article-anch" class="anch">
+            <div class="button button-h">
 
                 <p><i class="fas fa-chevron-down"></i></p>
             </div>
@@ -45,18 +45,19 @@
     </div>
 
 {% endblock %}
-    <a id="article-anch"></a>
+{% block content %}
+    <a id="article-anch" class="anch"></a>
     <div class="container-fluid content-wrapper article_content show-content">
 
         <article class="row post-type-{{post.post_type}} show_teaser" id="post-{{post.ID}}">
 
-            <section class="col-md-3 article-content">
+            <div class="col-md-3 article-content">
                 <div class="affiche">
                     <img src="{{post.thumbnail.src}}" alt="affiche" class="affiche">
                 </div>
-            </section>
+            </div>
             <div class="offset-md-1"></div>
-            <section class="col-md-8 article-content">
+            <div class="col-md-8 article-content">
                 <h1 class="article-h1 show-h1">{{ post.title }}</h1>
                 <h2 class="article-text article-sub-h2">
                     {{ post.get_field('field_5cb19302c9a7d') }}
@@ -67,18 +68,18 @@
                     <p class="article-text">
                         {{ post.content }}
                     </p>
-                    <a href="#article-anch2" class="anch">
+                    <a href="#article-anch2">
                         <div class="button button2">
                             <p>
                                 <i class="fas fa-chevron-down"></i>
                             </p>
                         </div>
                     </a>
-            </section>
+            </div>
             <div class="v-bloc col-md-12"></div>
-            <a id="article-anch2" class="anch" class="show-content2"></a>
+            <a id="article-anch2" class="show-content2"></a>
             {% if post.get_field('video-booleen') %}
-                <section class="col-md-6 article-content">
+                <div class="col-md-6 article-content">
                     <h2 class="article-h1 show-h1" id="imagine">
                         {{ post.get_field('field_5cb1941775e1b') }}
                     </h2>
@@ -92,23 +93,23 @@
                         </div>
                     </a>
 
-                </section>
-                <section class="col-md-6 video">
+                </div>
+                <div class="col-md-6 video">
                     <div class="video-content">
                         {{ post.get_field('field_5cb1e69bc71a5') }}
                     </div>
-                </section>
+                </div>
 
 
 
             {% else %}
-                <h2 class="article-h1" id="imagine">
-                    {{ post.get_field('field_5cb1941775e1b') }}
-                </h2>
-                <div class="row">
 
-                    <section class="col-md-6">
+                <div class="row article-content">
 
+                    <div class="col-md-6 ">
+                        <h2 class="article-h1" id="imagine">
+                            {{ post.get_field('field_5cb1941775e1b') }}
+                        </h2>
                             <p class="article-text">
                                 {{ post.get_field('field_5cb1939eb9083')  }}
                             </p>
@@ -118,18 +119,18 @@
                                     <p><i class="fas fa-chevron-down"></i></p>
                                 </div>
                             </a>
-                    </section>
-                    <section class="col-md-6 img_alt">
+                    </div>
+                    <div class="col-md-6 img_alt">
                         <img src="{{ post.get_field('field_5cb488e6b0a43') }}" alt="img">
-                    </section>
+                    </div>
                 </div>
 
             {% endif %}
             <div class="offset-1"></div>
             {% if post.get_field('dispo') %}
                 <a id="article-anch3"></a>
-                <section class="col-md-10 bref">
-                    <a id="article-anch3"></a>
+                <div class="col-md-10 bref">
+                    <a id="article-anch3" class="anch"></a>
                     <h2 class="article-text-h2" id="title-spe">
                         {{ post.title }}
                     </h2>
@@ -169,21 +170,21 @@
                         <div>
                         <h4 class="next-date next-date2">PROCHAINES REPRÉSENTATIONS</h4>
                         {% for event in events %}
-                            {% if show.category == event.category %}
-                                <div class="dates row">
-                                    <div class="offset-md-1"></div>
-                                    <a  class="date-link col-md-10" href="{{ event.link }}">
-                                        <div class="date-line">
-                                            <p class="date-mini">{{ event.get_field('field_5cb4d81344d45') }}</p>
-                                            <p class="cp-mini">{{ event.get_field('field_5cb4e62317783') }}</p>
-                                            <p class="town-mini">{{ event.get_field('field_5cb4e63d17784') }}</p>
-                                        </div>
-                                    </a>
-                                    <div class="offset-md-1"></div>
+                            {% if post.get_field('field_5cbc31c7f2c13') == event.get_field('field_5cbc31c7f2c13') %}
+                                {% if post.get_field('dispo') %}
+                                 <section class="event-home-bloc container">
 
+                            <a class="row event-home" href="{{ event.link }}">
+                                <div class="thumb thumb2 col-md-3">
+                                    <img src="{{ post.thumbnail.src }}" alt="thumb">
                                 </div>
+                                <p class="col-md-3">{{ event.get_field('field_5cb4d81344d45') }}</p>
+                                <p class="col-md-3">{{ event.get_field('field_5cb4e5ba17780') }}</p>
+                                <p class="col-md-3">{{ event.get_field('field_5cb4e62317783') }} {{ event.get_field('field_5cb4e63d17784') }}</p>
+                            </a>
+                        </section>
 
-                            {% else %}
+                                {% else %}
                                 <div class="dates row">
                                     <div class="offset-md-2"></div>
                                     <a  class="date-link col-md-8" href="{{ theme.link }}/les-spectacles">
@@ -194,19 +195,20 @@
                                     <div class="offset-md-2"></div>
 
                                 </div>
+                                {% endif %}
                             {% endif %}
                         {% endfor %}
                         </div>
                     </div>
 
 
-                </section>
+                </div>
                 <div class="offset-1"></div>
 
 
             {% else %}
 
-            <a class="col-md-12" id="article-anch3"></a>
+            <a class="col-md-12" id="article-anch3" class="anch"></a>
 
             <h2 class="article-h1">A L'AFFICHE</h2>
                     <div class="article-loop article-loop2 container-fluid">
@@ -233,8 +235,8 @@
                         {% endfor %}
 
                     </div>
-
-                </section>
+                </article>
+                </div>
             {% endif %}
 
 

@@ -29,3 +29,16 @@ a:hover
 {
   opacity:1;
 }
+.event-home-bloc:hover
+
+{
+  background: $link;
+  color: #000000 !important;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.event-home-bloc:hover ~ event-home-bloc a
+{
+  color: #000;
+}

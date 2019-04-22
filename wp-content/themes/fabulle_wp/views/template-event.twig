@@ -6,16 +6,16 @@
         <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
             <section class="article-content row">
                 {% for show in shows %}
-                    {% if show.category == post.category %}
+                    {% if show.get_field('field_5cbc31c7f2c13') == post.get_field('field_5cbc31c7f2c13') %}
 
-                        <div class="show3 show">
+                        <div class="show3 show2 article-loop show">
                             <a class="row" href="{{ show.link }}">
 
-                                <h1 class="h1-medal col-12">
+                                <h1 class="article-h1 col-12">
                                     {{ show.title }}
                                 </h1>
 
-                                <div class="thumb-medal col-md-12">
+                                <div class="thumb-medal2 col-md-12">
                                     <img src="{{show.thumbnail.src}}" alt="affiche" class="affiche">
                                 </div>
 
@@ -32,7 +32,7 @@
                                 </p>
                                 <div class="offset-md-3"></div>
                                 <p class="col-6">
-                                    durée: {{ show.get_field('field_5cb19fe0cd2c3') }} environ.
+                                    durée: {{ show.get_field('field_5cb19fe0cd2c3') }} mn environ.
                                 </p>
                                 <div class="offset-md-3"></div>
                             </a>
